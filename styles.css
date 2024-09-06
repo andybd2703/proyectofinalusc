@@ -180,3 +180,29 @@ body {
   
   transform: translate(0);
   }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .image-gallery a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-gallery img:hover {
+    transform: scale(1.1);
+  }
+  

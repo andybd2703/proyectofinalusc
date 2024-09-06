@@ -4,47 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Inscripción</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        input {
-            margin-bottom: 10px;
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="inscripcion.css">
 </head>
 <body>
     <div class="container">
-        <h2>Formulario de Inscripción</h2>
+        <h2>Formulario de Inscripción al Evento</h2>
+        <span class="en">Inglés</span>
+        <input type="checkbox" class="check" checked>
+        <span class="es">Español</span>
+
+        <br><br>
         <form id="signupForm">
-            <input type="email" id="email" placeholder="Correo electrónico" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
+            <input type="text" id="nombre" placeholder="Ingresa tu Nombre Completo" required>
+            <input type="text" id="id" placeholder="Ingresa tu Identificacion">
+
+            <div class="container-1">
+                <p>Escoge una talla</p>
+                <div class="form-group">
+                    <input type="radio" name="sex" id="man">
+                    <label for="man">Hombre</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="sex" id="woman">
+                    <label for="woman">Mujer</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="sex" id="notalk">
+                    <label for="notalk">Mujer</label>
+                </div>
+            </div>
+            <br><br>
+            <label for="nacionalidad">Seleccione su nacionalidad:</label>
+            <select id="nacionalidad" name="nacionalidad">
+                <option value="afgano">Afgano</option>
+                <option value="alemán">Alemán</option>
+                <option value="andorrano">Andorrano</option>
+                <option value="angoleño">Angoleño</option>
+                <option value="antiguano">Antiguano</option>
+                <option value="argentino">Argentino</option>
+                <option value="armenio">Armenio</option>
+                <option value="australiano">Australiano</option>
+                <option value="austriaco">Austriaco</option>
+                <option value="bahameño">Bahameño</option>
+                <option value="bahraini">Bahraini</option>
+                <option value="bangladesí">Bangladesí</option>
+                <option value="barbadense">Barbadense</option>
+                <option value="belga">Belga</option>
+                <option value="beliceño">Beliceño</option>
+                <option value="beninés">Beninés</option>
+                <option value="bhutanés">Bhutanés</option>
+                <option value="bielorruso">Bielorruso</option>
+                <option value="boliviano">Boliviano</option>
+                <option value="bosnio">Bosnio</option>
+                <option value="brasileño">Brasileño</option>
+                <option value="bruneano">Bruneano</option>
+                <option value="búlgaro">Búlgaro</option>
+                <option value="burkinés">Burkinés</option>
+                <option value="burundés">Burundés</option>
+                <option value="butanés">Butanés</option>
+                <option value="camboyano">Camboyano</option>
+                <option value="camerunés">Camerunés</option>
+                <option value="canadiense">Canadiense</option>
+                <option value="chadiano">Chadiano</option>
+                <option value="chileno">Chileno</option>
+                <option value="chino">Chino</option>
+                <option value="chipriota">Chipriota</option>
+                <option value="colombiano">Colombiano</option>
+                <option value="comorano">Comorano</option>
+                <option value="congoleño">Congoleño</option>
+                <option value="costarricense">Costarricense</option>
+                <option value="croata">Croata</option>
+                <option value="cubano">Cubano</option>
+                <option value="danés">Danés</option>
+                <option value="dominicano">Dominicano</option>
+                <option value="ecuatoriano">Ecuatoriano</option>
+                <option value="egipcio">Egipcio</option>
+                <option value="salvadoreño">Salvadoreño</option>
+                <option value="emiratí">Emiratí</option>
+                <option value="español">Español</option>
+                <option value="estonio">Estonio</option>
+                <option value="etíope">Etíope</option>
+                <option value="filipino">Filipino</option>
+                <option value="finlandés">Finlandés</option>
+                <option value="francés">Francés</option>
+                <option value="gabones">Gabones</option>
+                <option value="gambiano">Gambiano</option>
+                <option value="georgiano">Georgiano</option>
+                <option value="ghanés">Ghanés</option>
+                <option value="granadino">Granadino</option>
+                <option value="griego">Griego</option>
+                <option value="guatemalteco">Guatemalteco</option>
+                <option value="guineano">Guineano</option>
+                <option value="guyanés">Guyanés</option>
+                <option value="haitiano">Haitiano</option>
+                <option value="hondureño">Hondureño</option>
+                <option value="húngaro">Húngaro</option>
+                <option value="indio">Indio</option>
+                <option value="indonesio">Indonesio</option>
+                <option value="iraquí">Iraquí</option>
+                <option value="irlandés">Irlandés</option>
+                <option value="islandés">Islandés</option>
+                <option value="italiano">Italiano</option>
+                <option value="jamaicano">Jamaicano</option>
+                <option value="japonés">Japonés</option>
+                <option value="jordano">Jordano</option>
+                <option value="kazajo">Kazajo</option>
+                <option value="keniano">Keniano</option>
+                <option value="kiribatiano">Kiribatiano</option>
+                <option value="kuwaití">Kuwaití</option>
+                <option value="laosiano">Laosiano</option>
+                <option value="letón">Letón</option>
+                <option value="libanés">Libanés</option>
+                <option value="liberiano">Liberiano</option>
+                <option value="libio">Libio</option>
+                <option value="liechtensteiniano">Liechtensteiniano</option>
+                <option value="lituano">Lituano</option>
+                <option value="luxemburgués">Luxemburgués</option>
+                <option value="macedonio">Macedonio</option>
+                <option value="malasio">Malasio</option>
+                <option value="malauí">Malauí</option>
+                <option value="maldivo">Maldivo</option>
+                <option value="malgache">Malgache</option>
+                <option value="maliano">Maliano</option>
+                <option value="maliense">Maliense</option>
+                <option value="maltés">Maltés</option>
+                <option value="marfileño">Marfileño</option>
+                <option value="marroquí">Marroquí</option>
+                <option value="mauriciano">Mauriciano</option>
+                <option value="mauritano">Mauritano</option>
+                <option value="mexicano">Mexicano</option>
+                <option value="micronesio">Micronesio</option>
+                <option value="moldavo">Moldavo</option>
+                <option value="monegasco">Monegasco</option>
+                <option value="mongol">Mongol</option>
+                <option value="montenegrino">Montenegrino</option>
+                <option value="mozambiqueño">Mozambiqueño</option>
+                <option value="namibio">Namibio</option>
+                <option value="nauruano">Nauruano</option>
+                <option value="nepalí">Nepalí</option>
+                <option value="neozelandés">Neozelandés</option>
+                <option value="nicaragüense">Nicaragüense</option>
+                <option value="nigeriano">Nigeriano</option>
+                <option value="norcoreano">Norcoreano</option>
+                <option value="noruego">Noruego</option>
+                <option value="omaní">Omaní</option>
+                <option value="paquistaní">Paquistaní</option>
+                <option value="palauano">Palauano</option>
+                <option value="palestino">Palestino</option>
+                <option value="panameño">Panameño</option>
+                <option value="papú">Papú</option>
+                <option value="paraguayo">Paraguayo</option>
+                <option value="peruano">Peruano</option>
+                <option value="polaco">Polaco</option>
+                <option value="portugués">Portugués</option>
+                <option value="puertorriqueño">Puertorriqueño</option>
+                <option value="qatarí">Qatarí</option>
+                <option value="ruandés">Ruandés</option>
+                <option value="rumano">Rumano</option>
+                <option value="ruso">Ruso</option>
+                <option value="salomonense">Salomonense</option>
+                <option value="samoano">Samoano</option>
+                <option value="sanmarinense">Sanmarinense</option>
+                <option value="santotomense">Santotomense</option>
+                <option value="saudí">Saudí</option>
+                <option value="senegalés">Senegalés</option>
+                <option value="serbio">Serbio</option>
+                <option value="seychellense">Seychellense</option>
+                <option value="sierraleonés">Sierraleonés</option>
+                <option value="singapurense">Singapurense</option>
+                <option value="somalí">Somalí</option>
+                <option value="srilanqués">Srilanqués</option>
+                <option value="sudafricano">Sudafricano</option>
+                <option value="sudanés">Sudanés</option>
+                <option value="sudcoreano">Sudcoreano</option>
+                <option value="sudanés">Sudanés</option>
+                <option value="sueco">Sueco</option>
+                <option value="suizo">Suizo</option>
+                <option value="surinamés">Surinamés</option>
+                <option value="tailandés">Tailandés</option>
+                <option value="taiwanés">Taiwanés</option>
+                <option value="tanzano">Tanzano</option>
+                <option value="tayiko">Tayiko</option>
+                <option value="tiburcio">Tiburcio</option>
+                <option value="togolés">Togolés</option>
+                <option value="tonganés">Tonganés</option>
+                <option value="trinitense">Trinitense</option>
+                <option value="tunecino">Tunecino</option>
+                <option value="turcomano">Turcomano</option>
+                <option value="turco">Turco</option>
+                <option value="tuvaluano">Tuvaluano</option>
+                <option value="ucraniano">Ucraniano</option>
+                <option value="ugandés">Ugandés</option>
+                <option value="uruguayo">Uruguayo</option>
+                <option value="uzbeko">Uzbeko</option>
+                <option value="vanuatuense">Vanuatuense</option>
+                <option value="venezolano">Venezolano</option>
+                <option value="vietnamita">Vietnamita</option>
+                <option value="yemení">Yemení</option>
+                <option value="zambiano">Zambiano</option>
+                <option value="zimbabuense">Zimbabuense</option>
+            </select>     
+            <br>
+            <br>
+            <label for="estamento">Seleccione su Estamento:</label>
+            <select name="text" id="estamento">
+                <option value="estudiante">Estudiante</option>
+                <option value="docente">Docente</option>
+                <option value="egresado">Egresado</option>
+                <option value="administrativo">Administrativo</option>
+            </select>
+            <input type="email" name="email" id="email" placeholder="Ingrese Su Correo electrónico">      
+            <input type="password" name="password" id="password" placeholder="Crea Su Clave">      
             <button type="submit">Registrarse</button>
         </form>
         <p id="message"></p>
