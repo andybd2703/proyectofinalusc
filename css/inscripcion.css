@@ -123,11 +123,11 @@ button:hover {
 }
 
 .en {
-    color: #e50000;
+    color: #0b00e5;
 }
 
 .es {
-    color: #6600ec;
+    color: #ec0000;
 }
 
 /* Estilos del switch */
@@ -138,7 +138,7 @@ button:hover {
     cursor: pointer;
     appearance: none;
     outline: none;
-    background-color: #db0000;
+    background-color: #0b00e5;
     border-radius: 25px;
     transition: background-color 0.25s;
 }
@@ -156,7 +156,7 @@ button:hover {
 }
 
 .check:checked {
-    background-color: #400197;
+    background-color: #d00000;
 }
 
 .check:checked:before {
