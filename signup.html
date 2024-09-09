@@ -219,21 +219,5 @@
         </form>
         <p id="message"></p>
     </div>
-
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Guardar datos en localStorage (solo para propósitos de demostración)
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
-
-            // Redirigir a la página de confirmación
-            window.location.href = 'confirmacion.html';
-        });
-    </script>
 </body>
 </html>

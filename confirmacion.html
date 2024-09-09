@@ -32,19 +32,29 @@
         button:hover {
             background: #0056b3;
         }
+        .lang-en { display: none; }
+        .lang-es { display: block; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Ya fuiste registrado para ver el estado en el evento</h1>
-        <button id="redirectButton">Ingrese aqui</button>
-    </div>
-
-    <script>
-        document.getElementById('redirectButton').addEventListener('click', function() {
-            // Redirige a confirmacion.html
-            window.location.href = 'login.html';
-        });
-    </script>
+    <body>
+        <div id="confirmationMessage">
+            <p class="lang-es">¡Gracias por registrarte!</p>
+            <p class="lang-en">Thank you for registering!</p>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const lang = urlParams.get('lang');
+                
+                if (lang === 'en') {
+                    document.querySelectorAll('.lang-es').forEach(el => el.style.display = 'none');
+                    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+                } else {
+                    document.querySelectorAll('.lang-es').forEach(el => el.style.display = 'block');
+                    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+                }
+            });
+        </script>
 </body>
 </html>

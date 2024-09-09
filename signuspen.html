@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=x, initial-scale=1.0">
     <title>Documento</title>
-    <link rel="stylesheet" href="../css/b.css">
+    <link rel="stylesheet" href="b.css">
 </head>
 <body>
     
@@ -219,23 +219,5 @@
         </form>
         <p id="message"></p>
     </div>
-
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Guardar datos en localStorage (solo para propósitos de demostración)
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
-
-            // Redirigir a la página de confirmación
-            window.location.href = 'confirmacion.html';
-        });
-    </script>
-
-    <script src="../en/b.js"></script>
 </body>
 </html>
