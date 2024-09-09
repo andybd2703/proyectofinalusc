@@ -179,7 +179,6 @@ header a:hover {
   border-color: transparent;
   display: block; /* Asegura que el botón sea un bloque */
   margin: 20px auto; /* Centra el botón horizontalmente y añade margen vertical */
-<<<<<<< HEAD
 }
 
 #mostrar2,
@@ -194,7 +193,6 @@ header a:hover {
   display: block; /* Asegura que el botón sea un bloque */
   margin: 20px auto; /* Centra el botón horizontalmente y añade margen vertical */
 }
-=======
 
 
 #mostrar2,
@@ -209,4 +207,3 @@ header a:hover {
   display: block; /* Asegura que el botón sea un bloque */
   margin: 20px auto; /* Centra el botón horizontalmente y añade margen vertical */
 }
->>>>>>> 9d5780ca84dc723e68caeb2a1fb74b3fa432e191
