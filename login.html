@@ -16,6 +16,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="https://prep20202.usc.edu.co/pluginfile.php/1/theme_edumy/favicon/1724452750/logo%20Acreditaci%C3%B3n%20Institucional.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
     <title>Inicia Sesión</title>
@@ -102,8 +103,41 @@
 </head>
 <body>
     <div class="d-lg-flex half">
-        <div class="bg order-1 order-md-2" style="background-image: url('img/Fuentes-ciberneticas-USC-5.jpg');"></div>
-        <div class="contents order-2 order-md-1">
+    <!-- Imagen de fondo -->
+    <div class="bg order-2 order-md-1" style="background-image: url('img/photo-1708549566274-638eb2d2108b.jpeg'); position: relative; height: 100vh;">
+        <!-- Imagen encima del h1 (si deseas mantenerla) -->
+        <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -100%); width: 500px; height: auto; border-radius: 18px;">
+        
+        <!-- Contenedor del cuadro de información con espacio en los lados -->
+        <h2 style="position: absolute; top: 49%; left: 15%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock <br>USC 2024</strong></h2>
+        
+        <div style="position: absolute; bottom: 200px; left: 0; right: 0; padding: 0 20px;">
+
+            <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex: 1; text-align: left;">
+                    <h3 style="margin: 0;">Fecha: 15 de septiembre, 2024</h3>
+                    <h3 style="margin: 0;">Ubicación: Cali, Colombia</h3>
+                    <h3 style="margin: 0;">Hora: 10:00 AM</h3>
+                </div>
+                <div style="text-align: center;">
+                    <h2 style="color: green; margin: 0;">Inscripciones abiertas</h2>
+                    <div style="display: inline-flex; align-items: center;">
+                        <img src="img/avatar-default-removebg-preview.png" alt="Icono" style="width: 24px; height: 24px; margin-left: 10px;">
+                        <p style="font-size: 24px; font-weight: bold; margin: 0; color: green;">110</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 40px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);background-color: rgba(21, 125, 17, 0.8); border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+            <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
+            <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non libero vel eros accumsan egestas. Nulla facilisi. Proin vel lacus vel elit luctus luctus a sit amet ligula.
+            </p>
+        </div>
+    </div>
+
+    <div class="contents order-1 order-md-2">
 
             <div class="container">
                 <div class="row align-items-center justify-content-center">
@@ -140,7 +174,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
     
     <script src="js/jquery-3.3.1.min.js"></script>
