@@ -10,28 +10,54 @@
     <link rel="shortcut icon" href="https://prep20202.usc.edu.co/pluginfile.php/1/theme_edumy/favicon/1724452750/logo%20Acreditaci%C3%B3n%20Institucional.png">
     <title>Regístrate</title>
     <style>
-        .form-row {
-            margin-bottom: 15px;
-        }
-        .form-row label {
-            display: block;
-        }
         .form-column {
-            flex: 1;
-            padding-right: 15px;
-        }
-        .form-column:last-child {
-            padding-right: 0;
-        }
-        .language-switch {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            margin-bottom: 20px;
-        }
-        .language-switch input[type="checkbox"] {
-            margin: 0 10px;
-        }
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-subgroup {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Ajusta para que los selects sean más pequeños */
+}
+
+.nationality-statement-group {
+    display: flex;
+    justify-content: space-between; /* Para poner los selects uno al lado del otro */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background-color: #45a049;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -39,25 +65,25 @@
     <div class="bg order-2 order-md-1" style="background-image: url('img/photo-1708549566274-638eb2d2108b.jpeg'); position: relative; height: 100vh;">
         <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -100%); width: 500px; height: auto; border-radius: 18px;">
         <h2 style="position: absolute; top: 49%; left: 15%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock <br>USC 2024</strong></h2>
-        
+        <h2 id="event-entry" style="position: absolute; top: 46%; right: 0%; transform: translate(-50%, -100%); color: white; font-size: 25px;">Entrada Libre</h2>
         <div style="position: absolute; bottom: 200px; left: 0; right: 0; padding: 0 20px;">
-
             <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
                 <div style="flex: 1; text-align: left;">
-                    <h3 style="margin: 0;">Fecha: 15 de septiembre, 2024</h3>
-                    <h3 style="margin: 0;">Ubicación: Cali, Colombia</h3>
-                    <h3 style="margin: 0;">Hora: 10:00 AM</h3>
+                    <h3 id="event-date" style="margin: 0;">Fecha: 15 de septiembre, 2024</h3>
+                    <h3 id="event-location" style="margin: 0;">Ubicación: Cali, Colombia</h3>
+                    <h3 id="event-time" style="margin: 0;">Hora: 10:00 AM</h3>
                 </div>
                 <div style="text-align: center;">
-                    <h2 style="color: green; margin: 0;">Inscripciones abiertas</h2>
+                    <h2 id="event-status" style="color: green; margin: 0;">Inscripciones abiertas</h2><br><br>
                     <div style="display: inline-flex; align-items: center;">
                         <img src="img/avatar-default-removebg-preview.png" alt="Icono" style="width: 24px; height: 24px; margin-left: 10px;">
-                        <p style="font-size: 24px; font-weight: bold; margin: 0; color: green;">110</p>
+                        <p id="event-count" style="font-size: 24px; font-weight: bold; margin: 0; color: green;">110</p>
                     </div>
                 </div>
-                
             </div>
         </div>
+        
+        
         <div style="position: absolute; bottom: 40px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);background-color: rgba(21, 125, 17, 0.8); border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
             <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
             <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
@@ -96,201 +122,195 @@
                         </svg>
                     </div>
                     <form method="POST" id="formRegister" action="login.html">
-                        <div class="form-row">
-                            <div class="form-column">
-                                <div class="form-group">
-                                    <label id="username-label" for="username" data-es="Usuario" data-en="Username">Usuario</label>
-                                    <input type="text" class="form-control" id="username" placeholder="Usuario" required>
-                                </div>
-                                <div class="form-group">
-                                    <label id="documentType-label" for="documentType" data-es="Tipo de Documento" data-en="Document Type">Tipo de Documento</label>
-                                    <select class="form-control" id="documentType">
-                                        <option>CC</option>
-                                        <option>CE</option>
-                                        <option>TI</option>
-                                        <option>PP</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label id="username-label" for="username" data-es="Usuario" data-en="Username">Usuario</label>
+                                <input type="text" class="form-control" id="username" placeholder="Usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="email-label" for="email" data-es="Correo electrónico" data-en="email">Correo electrónico</label>
+                                <input type="text" class="form-control" id="email" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
+                                <input type="number" class="form-control" id="documentNumber" placeholder="Número de Documento" required>
+                            </div>
+                            <div class="form-group nationality-statement-group">
+
+                                <div class="form-subgroup">
                                     <label id="nationality-label" for="nationality" data-es="Nacionalidad" data-en="Nationality">Nacionalidad</label>
                                     <select class="form-control" id="nationality">
-                                        <option value="angoleño" data-es="Angoleño" data-en="Angolan">Angoleño</option>
-                                        <option value="antiguano" data-es="Antiguano" data-en="Antiguan">Antiguano</option>
-                                        <option value="árabe" data-es="Árabe" data-en="Arab">Árabe</option>
-                                        <option value="argelino" data-es="Argelino" data-en="Algerian">Argelino</option>
-                                        <option value="argentino" data-es="Argentino" data-en="Argentinian">Argentino</option>
-                                        <option value="armeno" data-es="Armeno" data-en="Armenian">Armeno</option>
-                                        <option value="australiano" data-es="Australiano" data-en="Australian">Australiano</option>
-                                        <option value="austriaco" data-es="Austriaco" data-en="Austrian">Austriaco</option>
-                                <option value="bahameño" data-es="Bahameño" data-en="Bahamian">Bahameño</option>
-                                <option value="bahreiní" data-es="Bahreiní" data-en="Bahraini">Bahreiní</option>
-                                <option value="bangladesí" data-es="Bangladesí" data-en="Bangladeshi">Bangladesí</option>
-                                <option value="barbadense" data-es="Barbadense" data-en="Barbadian">Barbadense</option>
-                                <option value="belga" data-es="Belga" data-en="Belgian">Belga</option>
-                                <option value="beliciano" data-es="Beliciano" data-en="Belizean">Beliciano</option>
-                                <option value="beninés" data-es="Beninés" data-en="Beninese">Beninés</option>
-                                <option value="bhutanes" data-es="Bhutanes" data-en="Bhutanese">Bhutanes</option>
-                                <option value="bielorruso" data-es="Bielorruso" data-en="Belarusian">Bielorruso</option>
-                                <option value="birmano" data-es="Birmano" data-en="Burmese">Birmano</option>
-                                <option value="boliviano" data-es="Boliviano" data-en="Bolivian">Boliviano</option>
-                                <option value="bosnio" data-es="Bosnio" data-en="Bosnian">Bosnio</option>
-                                <option value="bostinense" data-es="Bostinense" data-en="Bostinese">Bostinense</option>
-                                <option value="búlgaro" data-es="Búlgaro" data-en="Bulgarian">Búlgaro</option>
-                                <option value="burundés" data-es="Burundés" data-en="Burundian">Burundés</option>
-                                <option value="caboverdiano" data-es="Caboverdiano" data-en="Cape Verdean">Caboverdiano</option>
-                                <option value="canadiense" data-es="Canadiense" data-en="Canadian">Canadiense</option>
-                                <option value="chileno" data-es="Chileno" data-en="Chilean">Chileno</option>
-                                <option value="colombiano" data-es="Colombiano" data-en="Colombian">Colombiano</option>
-                                <option value="comorense" data-es="Comorense" data-en="Comorian">Comorense</option>
-                                <option value="congoleño" data-es="Congoleño" data-en="Congolese">Congoleño</option>
-                                <option value="costarricense" data-es="Costarricense" data-en="Costa Rican">Costarricense</option>
-                                <option value="croata" data-es="Croata" data-en="Croatian">Croata</option>
-                                <option value="cubano" data-es="Cubano" data-en="Cuban">Cubano</option>
-                                <option value="danés" data-es="Danés" data-en="Danish">Danés</option>
-                                <option value="dominicano" data-es="Dominicano" data-en="Dominican">Dominicano</option>
-                                <option value="egipcio" data-es="Egipcio" data-en="Egyptian">Egipcio</option>
-                                <option value="el salvadoreño" data-es="El Salvador" data-en="Salvadoran">El Salvador</option>
-                                <option value="emiratí" data-es="Emiratí" data-en="Emirati">Emiratí</option>
-                                <option value="español" data-es="Español" data-en="Spanish">Español</option>
-                                <option value="estadounidense" data-es="Estadounidense" data-en="American">Estadounidense</option>
-                                <option value="estonio" data-es="Estonio" data-en="Estonian">Estonio</option>
-                                <option value="etíope" data-es="Etíope" data-en="Ethiopian">Etíope</option>
-                                <option value="fijiano" data-es="Fijiano" data-en="Fijian">Fijiano</option>
-                                <option value="filipino" data-es="Filipino" data-en="Filipino">Filipino</option>
-                                <option value="finlandés" data-es="Finlandés" data-en="Finnish">Finlandés</option>
-                                <option value="francés" data-es="Francés" data-en="French">Francés</option>
-                                <option value="gabones" data-es="Gabones" data-en="Gabonese">Gabones</option>
-                                <option value="gambiano" data-es="Gambiano" data-en="Gambian">Gambiano</option>
-                                <option value="georgiano" data-es="Georgiano" data-en="Georgian">Georgiano</option>
-                                <option value="germano" data-es="Germano" data-en="German">Germano</option>
-                                <option value="gibraltareño" data-es="Gibraltareño" data-en="Gibraltarian">Gibraltareño</option>
-                                <option value="granadino" data-es="Granadino" data-en="Grenadian">Granadino</option>
-                                <option value="griego" data-es="Griego" data-en="Greek">Griego</option>
-                                <option value="guatemalteco" data-es="Guatemalteco" data-en="Guatemalan">Guatemalteco</option>
-                                <option value="guineano" data-es="Guineano" data-en="Guinean">Guineano</option>
-                                <option value="guyano" data-es="Guyano" data-en="Guyanese">Guyano</option>
-                                <option value="haitiano" data-es="Haitiano" data-en="Haitian">Haitiano</option>
-                                <option value="hondureño" data-es="Hondureño" data-en="Honduran">Hondureño</option>
-                                <option value="hongkonés" data-es="Hongkonés" data-en="Hong Konger">Hongkonés</option>
-                                <option value="húngaro" data-es="Húngaro" data-en="Hungarian">Húngaro</option>
-                                <option value="indio" data-es="Indio" data-en="Indian">Indio</option>
-                                <option value="indonesio" data-es="Indonesio" data-en="Indonesian">Indonesio</option>
-                                <option value="iraní" data-es="Iraní" data-en="Iranian">Iraní</option>
-                                <option value="iraquí" data-es="Iraquí" data-en="Iraqi">Iraquí</option>
-                                <option value="irlandés" data-es="Irlandés" data-en="Irish">Irlandés</option>
-                                <option value="islandés" data-es="Islandés" data-en="Icelandic">Islandés</option>
-                                <option value="isleño" data-es="Isleño" data-en="Islander">Isleño</option>
-                                <option value="italiano" data-es="Italiano" data-en="Italian">Italiano</option>
-                                <option value="jamaicano" data-es="Jamaicano" data-en="Jamaican">Jamaicano</option>
-                                <option value="japonés" data-es="Japonés" data-en="Japanese">Japonés</option>
-                                <option value="jordano" data-es="Jordano" data-en="Jordanian">Jordano</option>
-                                <option value="kazajo" data-es="Kazajo" data-en="Kazakh">Kazajo</option>
-                                <option value="keniano" data-es="Keniano" data-en="Kenyan">Keniano</option>
-                                <option value="kirguís" data-es="Kirguís" data-en="Kyrgyz">Kirguís</option>
-                                <option value="kóreano" data-es="Kóreano" data-en="Korean">Kóreano</option>
-                                <option value="kuwaití" data-es="Kuwaití" data-en="Kuwaiti">Kuwaití</option>
-                                <option value="laosiano" data-es="Laosiano" data-en="Laotian">Laosiano</option>
-                                <option value="letono" data-es="Letono" data-en="Latvian">Letono</option>
-                                <option value="libanés" data-es="Libanés" data-en="Lebanese">Libanés</option>
-                                <option value="liberiano" data-es="Liberiano" data-en="Liberian">Liberiano</option>
-                                <option value="liechtensteiniano" data-es="Liechtensteiniano" data-en="Liechtensteiner">Liechtensteiniano</option>
-                                <option value="lituano" data-es="Lituano" data-en="Lithuanian">Lituano</option>
-                                <option value="luxemburgués" data-es="Luxemburgués" data-en="Luxembourgish">Luxemburgués</option>
-                                <option value="madurense" data-es="Madurense" data-en="Macedonian">Madurense</option>
-                                <option value="malasio" data-es="Malasio" data-en="Malaysian">Malasio</option>
-                                <option value="maldivo" data-es="Maldivo" data-en="Maldivian">Maldivo</option>
-                                <option value="maliense" data-es="Maliense" data-en="Malian">Maliense</option>
-                                <option value="maltés" data-es="Maltés" data-en="Maltese">Maltés</option>
-                                <option value="marroquí" data-es="Marroquí" data-en="Moroccan">Marroquí</option>
-                                <option value="mauriciano" data-es="Mauriciano" data-en="Mauritian">Mauriciano</option>
-                                <option value="mauriciano" data-es="Mauriciano" data-en="Mauritian">Mauriciano</option>
-                                <option value="mexicano" data-es="Mexicano" data-en="Mexican">Mexicano</option>
-                                <option value="micronesio" data-es="Micronesio" data-en="Micronesian">Micronesio</option>
-                                <option value="moldavo" data-es="Moldavo" data-en="Moldovan">Moldavo</option>
-                                <option value="monacense" data-es="Monacense" data-en="Monacan">Monacense</option>
-                                <option value="mongol" data-es="Mongol" data-en="Mongolian">Mongol</option>
-                                <option value="montserratense" data-es="Montserratense" data-en="Montserratian">Montserratense</option>
-                                <option value="marroquí" data-es="Marroquí" data-en="Moroccan">Marroquí</option>
-                                <option value="nacionalidad" data-es="Nacionalidad" data-en="Nationality">Nacionalidad</option>
-                                <option value="nepalí" data-es="Nepalí" data-en="Nepali">Nepalí</option>
-                                <option value="nigeriano" data-es="Nigeriano" data-en="Nigerian">Nigeriano</option>
-                                <option value="noruego" data-es="Noruego" data-en="Norwegian">Noruego</option>
-                                <option value="neozelandés" data-es="Neozelandés" data-en="New Zealander">Neozelandés</option>
-                                <option value="nigeriano" data-es="Nigeriano" data-en="Nigerian">Nigeriano</option>
-                                <option value="omaní" data-es="Omaní" data-en="Omani">Omaní</option>
-                                <option value="paquistaní" data-es="Paquistaní" data-en="Pakistani">Paquistaní</option>
-                                <option value="panameño" data-es="Panameño" data-en="Panamanian">Panameño</option>
-                                <option value="papú" data-es="Papú" data-en="Papuan">Papú</option>
-                                <option value="paraguayo" data-es="Paraguayo" data-en="Paraguayan">Paraguayo</option>
-                                <option value="peruano" data-es="Peruano" data-en="Peruvian">Peruano</option>
-                                <option value="polaco" data-es="Polaco" data-en="Polish">Polaco</option>
-                                <option value="portugués" data-es="Portugués" data-en="Portuguese">Portugués</option>
-                                <option value="qatari" data-es="Qatari" data-en="Qatari">Qatari</option>
-                                <option value="rumano" data-es="Rumano" data-en="Romanian">Rumano</option>
-                                <option value="ruso" data-es="Ruso" data-en="Russian">Ruso</option>
-                                <option value="salvadoreño" data-es="Salvadoreño" data-en="Salvadoran">Salvadoreño</option>
-                                <option value="samoano" data-es="Samoano" data-en="Samoan">Samoano</option>
-                                <option value="sanmarinense" data-es="Sanmarinense" data-en="Sanmarinese">Sanmarinense</option>
-                                <option value="saudí" data-es="Saudí" data-en="Saudi">Saudí</option>
-                                <option value="senegalés" data-es="Senegalés" data-en="Senegalese">Senegalés</option>
-                                <option value="serbio" data-es="Serbio" data-en="Serbian">Serbio</option>
-                                <option value="singapurense" data-es="Singapurense" data-en="Singaporean">Singapurense</option>
-                                <option value="sirio" data-es="Sirio" data-en="Syrian">Sirio</option>
-                                <option value="sudafricano" data-es="Sudafricano" data-en="South African">Sudafricano</option>
-                                <option value="sudanés" data-es="Sudanés" data-en="Sudanese">Sudanés</option>
-                                <option value="sueco" data-es="Sueco" data-en="Swedish">Sueco</option>
-                                <option value="suizo" data-es="Suizo" data-en="Swiss">Suizo</option>
-                                <option value="tailandés" data-es="Tailandés" data-en="Thai">Tailandés</option>
-                                <option value="tanzano" data-es="Tanzano" data-en="Tanzanian">Tanzano</option>
-                                <option value="timorense" data-es="Timorense" data-en="Timorese">Timorense</option>
-                                <option value="togoés" data-es="Togoés" data-en="Togolese">Togoés</option>
-                                <option value="trinitense" data-es="Trinitense" data-en="Trinidadian">Trinitense</option>
-                                <option value="tunisino" data-es="Tunisino" data-en="Tunisian">Tunisino</option>
-                                <option value="turco" data-es="Turco" data-en="Turkish">Turco</option>
-                                <option value="uganda" data-es="Ugandés" data-en="Ugandan">Ugandés</option>
-                                <option value="ucraniano" data-es="Ucraniano" data-en="Ukrainian">Ucraniano</option>
-                                <option value="uruguayo" data-es="Uruguayo" data-en="Uruguayan">Uruguayo</option>
-                                <option value="uzbeko" data-es="Uzbekistan" data-en="Uzbek">Uzbek</option>
-                                <option value="vanuatuense" data-es="Vanuatuense" data-en="Vanuatuan">Vanuatuense</option>
-                                <option value="venezolano" data-es="Venezolano" data-en="Venezuelan">Venezolano</option>
-                                <option value="vietnamita" data-es="Vietnamita" data-en="Vietnamese">Vietnamita</option>
-                                <option value="yemení" data-es="Yemení" data-en="Yemeni">Yemení</option>
-                                <option value="zambiano" data-es="Zambiano" data-en="Zambian">Zambiano</option>
-                                <option value="zimbabuense" data-es="Zimbabuense" data-en="Zimbabwean">Zimbabuense</option>
+                                        <option value="afg" data-es="Afgano" data-en="Afghan">Afgano</option>
+                                        <option value="alb" data-es="Albanés" data-en="Albanian">Albanés</option>
+                                        <option value="alg" data-es="Argelino" data-en="Algerian">Argelino</option>
+                                        <option value="and" data-es="Andorrano" data-en="Andorran">Andorrano</option>
+                                        <option value="ang" data-es="Angoleño" data-en="Angolan">Angoleño</option>
+                                        <option value="ant" data-es="Antiguano" data-en="Antiguan">Antiguano</option>
+                                        <option value="ara" data-es="Árabe" data-en="Arab">Árabe</option>
+                                        <option value="arg" data-es="Argentino" data-en="Argentine">Argentino</option>
+                                        <option value="aus" data-es="Australiano" data-en="Australian">Australiano</option>
+                                        <option value="aut" data-es="Austriaco" data-en="Austrian">Austriaco</option>
+                                        <option value="aze" data-es="Azerbaiyano" data-en="Azerbaijani">Azerbaiyano</option>
+                                        <option value="bah" data-es="Bahameño" data-en="Bahamian">Bahameño</option>
+                                        <option value="ban" data-es="Bangladesí" data-en="Bangladeshi">Bangladesí</option>
+                                        <option value="bar" data-es="Barbadense" data-en="Barbadian">Barbadense</option>
+                                        <option value="bel" data-es="Belga" data-en="Belgian">Belga</option>
+                                        <option value="ben" data-es="Beninés" data-en="Beninese">Beninés</option>
+                                        <option value="bhu" data-es="Butanés" data-en="Bhutanese">Butanés</option>
+                                        <option value="bol" data-es="Boliviano" data-en="Bolivian">Boliviano</option>
+                                        <option value="bos" data-es="Bosnio" data-en="Bosnian">Bosnio</option>
+                                        <option value="bra" data-es="Brasileño" data-en="Brazilian">Brasileño</option>
+                                        <option value="brn" data-es="Brunés" data-en="Bruneian">Brunés</option>
+                                        <option value="bul" data-es="Búlgaro" data-en="Bulgarian">Búlgaro</option>
+                                        <option value="bur" data-es="Buriate" data-en="Buryat">Buriate</option>
+                                        <option value="bur" data-es="Buriato" data-en="Buryat">Buriato</option>
+                                        <option value="camb" data-es="Camboyano" data-en="Cambodian">Camboyano</option>
+                                        <option value="can" data-es="Canadiense" data-en="Canadian">Canadiense</option>
+                                        <option value="cv" data-es="Caboverdiano" data-en="Cape Verdean">Caboverdiano</option>
+                                        <option value="ch" data-es="Suizo" data-en="Swiss">Suizo</option>
+                                        <option value="ch" data-es="Suizo" data-en="Swiss">Suizo</option>
+                                        <option value="che" data-es="Suizo" data-en="Swiss">Suizo</option>
+                                        <option value="chi" data-es="Chileno" data-en="Chilean">Chileno</option>
+                                        <option value="cmr" data-es="Camerunés" data-en="Cameroonian">Camerunés</option>
+                                        <option value="cog" data-es="Congoleño" data-en="Congolese">Congoleño</option>
+                                        <option value="col" data-es="Colombiano" data-en="Colombian">Colombiano</option>
+                                        <option value="com" data-es="Comorense" data-en="Comorian">Comorense</option>
+                                        <option value="cog" data-es="Congoleño" data-en="Congolese">Congoleño</option>
+                                        <option value="cri" data-es="Costarricense" data-en="Costa Rican">Costarricense</option>
+                                        <option value="cro" data-es="Croata" data-en="Croatian">Croata</option>
+                                        <option value="cub" data-es="Cubano" data-en="Cuban">Cubano</option>
+                                        <option value="cyp" data-es="Chipriota" data-en="Cypriot">Chipriota</option>
+                                        <option value="cze" data-es="Checo" data-en="Czech">Checo</option>
+                                        <option value="den" data-es="Danés" data-en="Danish">Danés</option>
+                                        <option value="dj" data-es="Yibutiano" data-en="Djiboutian">Yibutiano</option>
+                                        <option value="dom" data-es="Dominicano" data-en="Dominican">Dominicano</option>
+                                        <option value="egy" data-es="Egipcio" data-en="Egyptian">Egipcio</option>
+                                        <option value="els" data-es="Salvadoreño" data-en="Salvadoran">Salvadoreño</option>
+                                        <option value="eng" data-es="Inglés" data-en="English">Inglés</option>
+                                        <option value="esp" data-es="Español" data-en="Spanish">Español</option>
+                                        <option value="est" data-es="Estonio" data-en="Estonian">Estonio</option>
+                                        <option value="eth" data-es="Etíope" data-en="Ethiopian">Etíope</option>
+                                        <option value="fij" data-es="Fijiano" data-en="Fijian">Fijiano</option>
+                                        <option value="fin" data-es="Finlandés" data-en="Finnish">Finlandés</option>
+                                        <option value="fra" data-es="Francés" data-en="French">Francés</option>
+                                        <option value="gbr" data-es="Británico" data-en="British">Británico</option>
+                                        <option value="geo" data-es="Georgiano" data-en="Georgian">Georgiano</option>
+                                        <option value="ger" data-es="Alemán" data-en="German">Alemán</option>
+                                        <option value="gh" data-es="Ghanés" data-en="Ghanaian">Ghanés</option>
+                                        <option value="gre" data-es="Griego" data-en="Greek">Griego</option>
+                                        <option value="grl" data-es="Verdeño" data-en="Greenlander">Verdeño</option>
+                                        <option value="gum" data-es="Guameño" data-en="Guamanian">Guameño</option>
+                                        <option value="guy" data-es="Guayanés" data-en="Guyanese">Guayanés</option>
+                                        <option value="hait" data-es="Haitiano" data-en="Haitian">Haitiano</option>
+                                        <option value="hol" data-es="Holandés" data-en="Dutch">Holandés</option>
+                                        <option value="hnd" data-es="Hondureño" data-en="Honduran">Hondureño</option>
+                                        <option value="hun" data-es="Húngaro" data-en="Hungarian">Húngaro</option>
+                                        <option value="ind" data-es="Indio" data-en="Indian">Indio</option>
+                                        <option value="ina" data-es="Indonesio" data-en="Indonesian">Indonesio</option>
+                                        <option value="irn" data-es="Iraní" data-en="Iranian">Iraní</option>
+                                        <option value="irq" data-es="Iraquí" data-en="Iraqi">Iraquí</option>
+                                        <option value="irl" data-es="Irlandés" data-en="Irish">Irlandés</option>
+                                        <option value="isr" data-es="Israelí" data-en="Israeli">Israelí</option>
+                                        <option value="ita" data-es="Italiano" data-en="Italian">Italiano</option>
+                                        <option value="jam" data-es="Jamaicano" data-en="Jamaican">Jamaicano</option>
+                                        <option value="jap" data-es="Japonés" data-en="Japanese">Japonés</option>
+                                        <option value="jor" data-es="Jordano" data-en="Jordanian">Jordano</option>
+                                        <option value="kaz" data-es="Kazajo" data-en="Kazakh">Kazajo</option>
+                                        <option value="ken" data-es="Keniano" data-en="Kenyan">Keniano</option>
+                                        <option value="kir" data-es="Kirguís" data-en="Kyrgyz">Kirguís</option>
+                                        <option value="kmr" data-es="Comorense" data-en="Comorian">Comorense</option>
+                                        <option value="kor" data-es="Coreano" data-en="Korean">Coreano</option>
+                                        <option value="kos" data-es="Kosovar" data-en="Kosovar">Kosovar</option>
+                                        <option value="kwt" data-es="Kuwaití" data-en="Kuwaiti">Kuwaití</option>
+                                        <option value="lao" data-es="Laosiano" data-en="Laotian">Laosiano</option>
+                                        <option value="lat" data-es="Latino" data-en="Latvian">Latino</option>
+                                        <option value="lib" data-es="Libanés" data-en="Lebanese">Libanés</option>
+                                        <option value="lie" data-es="Liechtensteiniano" data-en="Liechtensteiner">Liechtensteiniano</option>
+                                        <option value="ltu" data-es="Lituano" data-en="Lithuanian">Lituano</option>
+                                        <option value="lux" data-es="Luxemburgués" data-en="Luxembourgish">Luxemburgués</option>
+                                        <option value="mad" data-es="Malgache" data-en="Malagasy">Malgache</option>
+                                        <option value="mal" data-es="Malayo" data-en="Malaysian">Malayo</option>
+                                        <option value="mar" data-es="Marroquí" data-en="Moroccan">Marroquí</option>
+                                        <option value="mda" data-es="Moldavo" data-en="Moldovan">Moldavo</option>
+                                        <option value="mne" data-es="Montenegrino" data-en="Montenegrin">Montenegrino</option>
+                                        <option value="moz" data-es="Mozambiqueño" data-en="Mozambican">Mozambiqueño</option>
+                                        <option value="my" data-es="Malasio" data-en="Malaysian">Malasio</option>
+                                        <option value="nam" data-es="Namibio" data-en="Namibian">Namibio</option>
+                                        <option value="na" data-es="Nauruano" data-en="Nauruan">Nauruano</option>
+                                        <option value="ner" data-es="Nigerino" data-en="Nigerien">Nigerino</option>
+                                        <option value="nig" data-es="Nigeriano" data-en="Nigerian">Nigeriano</option>
+                                        <option value="niu" data-es="Niueño" data-en="Niuean">Niueño</option>
+                                        <option value="nor" data-es="Noruego" data-en="Norwegian">Noruego</option>
+                                        <option value="npl" data-es="Nepalí" data-en="Nepalese">Nepalí</option>
+                                        <option value="oma" data-es="Omaní" data-en="Omani">Omaní</option>
+                                        <option value="pak" data-es="Paquistaní" data-en="Pakistani">Paquistaní</option>
+                                        <option value="pan" data-es="Panameño" data-en="Panamanian">Panameño</option>
+                                        <option value="png" data-es="Papú" data-en="Papuan">Papú</option>
+                                        <option value="pol" data-es="Polaco" data-en="Polish">Polaco</option>
+                                        <option value="prt" data-es="Portugués" data-en="Portuguese">Portugués</option>
+                                        <option value="pur" data-es="Puertorriqueño" data-en="Puerto Rican">Puertorriqueño</option>
+                                        <option value="qat" data-es="Qatarí" data-en="Qatari">Qatarí</option>
+                                        <option value="rom" data-es="Rumano" data-en="Romanian">Rumano</option>
+                                        <option value="rus" data-es="Ruso" data-en="Russian">Ruso</option>
+                                        <option value="rwa" data-es="Ruandés" data-en="Rwandan">Ruandés</option>
+                                        <option value="sau" data-es="Saudi" data-en="Saudi">Saudi</option>
+                                        <option value="sen" data-es="Senegalés" data-en="Senegalese">Senegalés</option>
+                                        <option value="sgp" data-es="Singapurense" data-en="Singaporean">Singapurense</option>
+                                        <option value="slv" data-es="Salvadoreño" data-en="Salvadoran">Salvadoreño</option>
+                                        <option value="som" data-es="Somalí" data-en="Somali">Somalí</option>
+                                        <option value="sri" data-es="Sri Lankan" data-en="Sri Lankan">Sri Lankan</option>
+                                        <option value="ssd" data-es="Sudanés del Sur" data-en="South Sudanese">Sudanés del Sur</option>
+                                        <option value="sur" data-es="Surinamés" data-en="Surinamese">Surinamés</option>
+                                        <option value="swz" data-es="Suazi" data-en="Swazi">Suazi</option>
+                                        <option value="syr" data-es="Sirio" data-en="Syrian">Sirio</option>
+                                        <option value="tah" data-es="Tahitiano" data-en="Tahitian">Tahitiano</option>
+                                        <option value="tai" data-es="Taiwanés" data-en="Taiwanese">Taiwanés</option>
+                                        <option value="tch" data-es="Checo" data-en="Czech">Checo</option>
+                                        <option value="tgo" data-es="Togolés" data-en="Togolese">Togolés</option>
+                                        <option value="tha" data-es="Tailandés" data-en="Thai">Tailandés</option>
+                                        <option value="tjk" data-es="Tayiko" data-en="Tajik">Tayiko</option>
+                                        <option value="tkl" data-es="Tokelauano" data-en="Tokelauan">Tokelauano</option>
+                                        <option value="ton" data-es="Tongano" data-en="Tongan">Tongano</option>
+                                        <option value="tun" data-es="Tunisiano" data-en="Tunisian">Tunisiano</option>
+                                        <option value="tur" data-es="Turco" data-en="Turkish">Turco</option>
+                                        <option value="tuv" data-es="Tuvaluano" data-en="Tuvaluan">Tuvaluano</option>
+                                        <option value="u15" data-es="Ucraniano" data-en="Ukrainian">Ucraniano</option>
+                                        <option value="uga" data-es="Ugandés" data-en="Ugandan">Ugandés</option>
+                                        <option value="ukr" data-es="Ucraniano" data-en="Ukrainian">Ucraniano</option>
+                                        <option value="uri" data-es="Uruguayo" data-en="Uruguayan">Uruguayo</option>
+                                        <option value="usa" data-es="Estadounidense" data-en="American">Estadounidense</option>
+                                        <option value="uzb" data-es="Uzbeco" data-en="Uzbek">Uzbeco</option>
+                                        <option value="vnm" data-es="Vietnamita" data-en="Vietnamese">Vietnamita</option>
+                                        <option value="vut" data-es="Vanuatuense" data-en="Vanuatuan">Vanuatuense</option>
+                                        <option value="wal" data-es="Galés" data-en="Welsh">Galés</option>
+                                        <option value="wft" data-es="Walisio" data-en="Wallisian">Walisio</option>
+                                        <option value="yem" data-es="Yemení" data-en="Yemeni">Yemení</option>
+                                        <option value="zaf" data-es="Sudafricano" data-en="South African">Sudafricano</option>
+                                        <option value="zmb" data-es="Zambiano" data-en="Zambian">Zambiano</option>
+                                        <option value="zwe" data-es="Zimbabuense" data-en="Zimbabwean">Zimbabuense</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="form-column">
-                                <div class="form-group">
-                                    <label id="password-label" for="password" data-es="Contraseña" data-en="Password">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
-                                </div>
-                                <div class="form-group">
-                                    <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
-                                    <input type="number" class="form-control" id="documentNumber" placeholder="Número de Documento" required>
-                                </div>
-                                <div class="form-group">
-                                    <label id="position-label" for="position" data-es="Estamento" data-en="Position">Estamento</label>
-                                    <select class="form-control" id="position">
-                                        <option value="student" data-es="Estudiante" data-en="Student">Estudiante</option>
-                                        <option value="teacher" data-es="Profesor" data-en="Teacher">Profesor</option>
-                                        <option value="other" data-es="Otro" data-en="Other">Otro</option>
+                                
+                                <div class="form-subgroup">
+                                    <label id="statement-label" for="statement" data-es="Estamento" data-en="Statement">Estamento</label>
+                                    <select class="form-control" id="statement">
+                                        <option value="estudiante" data-es="Estudiante" data-en="Student">Estudiante</option>
+                                        <option value="docente" data-es="Docente" data-en="Teacher">Docente</option>
+                                        <option value="otros" data-es="Otros" data-en="Others">Otros</option>
                                     </select>
-                                </div>
+                                </div>    
                             </div>
-                        </div>
-                        
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary" id="submit-btn">Sign Up</button>
-                        </div>
-                        <div class="form-group text-center">
-                            <p id="forgot-pass">
-                                <span></span> 
-                                <a href="login.html" id="forgot-link"></a>
-                            </p>
                             
+                            
+                            <p id="login-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                            <!-- Botón de Sign Up -->
+                            <div class="form-group">
+                                <button type="submit" id="signup-button" class="btn-signup">Regístrate</button>
+                            </div>
                         </div>
                     </form>
+
+                    
                 </div>
             </div>
         </div>
@@ -301,39 +321,65 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+
 <script>
-    document.getElementById('languageSwitch').addEventListener('change', function() {
-    var isEnglish = this.checked;
+    document.addEventListener('DOMContentLoaded', function() {
+    var languageSwitch = document.getElementById('languageSwitch');
 
-    // Traducción de títulos y etiquetas
-    document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>In</strong>' : 'Regístrate <strong></strong>';
-    document.getElementById('username-label').textContent = isEnglish ? 'Username' : 'Usuario';
-    document.getElementById('password-label').textContent = isEnglish ? 'Password' : 'Contraseña';
-    document.getElementById('username').placeholder = isEnglish ? 'example@mail.com' : 'Usuario';
-    document.getElementById('password').placeholder = isEnglish ? 'Enter your password' : 'Ingresa tu contraseña';
+    // Función para aplicar la traducción
+    function applyTranslation() {
+        var isEnglish = languageSwitch.checked;
 
-    // Traducción de opciones de selección
-    var nationalitySelect = document.getElementById('nationality');
-    Array.from(nationalitySelect.options).forEach(function(option) {
-        option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
+        // Traducción de títulos y etiquetas del formulario
+        document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>Up</strong>' : 'Regístrate <strong></strong>';
+        document.getElementById('username-label').textContent = isEnglish ? 'Username' : 'Usuario';
+        document.getElementById('email-label').textContent = isEnglish ? 'Email' : 'Correo electrónico';
+        document.getElementById('documentNumber-label').textContent = isEnglish ? 'Document Number' : 'Número de Documento';
+        document.getElementById('username').placeholder = isEnglish ? 'example@mail.com' : 'Usuario';
+        document.getElementById('email').placeholder = isEnglish ? 'email@example.com' : 'Correo electrónico';
+        document.getElementById('documentNumber').placeholder = isEnglish ? 'Enter your document number' : 'Número de Documento';
+        document.getElementById('signup-button').textContent = isEnglish ? 'Sign Up' : 'Regístrate';
+        document.getElementById('statement-label').textContent = isEnglish ? 'Stament' : 'Estamento';
+        
+        var nationalitySelect = document.getElementById('nationality');
+        Array.from(nationalitySelect.options).forEach(function(option) {
+            option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
+        });
+
+        var statementSelect = document.getElementById('statement');
+        Array.from(statementSelect.options).forEach(function(option) {
+            option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
+        });
+
+        var loginLink = document.getElementById('login-link');
+        loginLink.innerHTML = isEnglish 
+            ? "Already have an account? <a href='login.html'>Sign In here</a>" 
+            : "¿Ya tienes cuenta? <a href='login.html'>Inicia sesión aquí</a>";
+
+
+        // Traducción de información del evento
+        document.getElementById('event-date').textContent = isEnglish ? 'Date: September 15, 2024' : 'Fecha: 15 de septiembre, 2024';
+        document.getElementById('event-location').textContent = isEnglish ? 'Location: Cali, Colombia' : 'Ubicación: Cali, Colombia';
+        document.getElementById('event-time').textContent = isEnglish ? 'Time: 10:00 AM' : 'Hora: 10:00 AM';
+        document.getElementById('event-status').textContent = isEnglish ? 'Registrations Open' : 'Inscripciones abiertas';
+        document.getElementById('event-entry').textContent = isEnglish ? 'Free Entry' : 'Entrada Libre';
+    }
+
+    // Aplicar traducción en base al estado del switch al cargar la página
+    applyTranslation();
+
+    // Agregar el evento change para el switch
+    languageSwitch.addEventListener('change', function() {
+        applyTranslation();
     });
-
-    var positionSelect = document.getElementById('position');
-    Array.from(positionSelect.options).forEach(function(option) {
-        option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
-    });
-
-    // Traducción del enlace de "¿Ya tienes una cuenta?"
-    var forgotPassElement = document.getElementById('forgot-pass');
-    var forgotSpan = forgotPassElement.querySelector('span');
-    forgotSpan.textContent = isEnglish ? 'Already have an account?' : '¿Ya tienes una cuenta?';
-    var forgotLinkElement = document.getElementById('forgot-link');
-    forgotLinkElement.textContent = isEnglish ? 'Sign In' : 'Inicia sesión';
-    forgotLinkElement.href = isEnglish ? 'login.html' : 'login.html';
 });
 
 
+
+
+
 </script>
+
 
 
 </body>

@@ -103,40 +103,35 @@
 </head>
 <body>
     <div class="d-lg-flex half">
-    <!-- Imagen de fondo -->
-    <div class="bg order-2 order-md-1" style="background-image: url('img/photo-1708549566274-638eb2d2108b.jpeg'); position: relative; height: 100vh;">
-        <!-- Imagen encima del h1 (si deseas mantenerla) -->
-        <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -100%); width: 500px; height: auto; border-radius: 18px;">
-        
-        <!-- Contenedor del cuadro de información con espacio en los lados -->
-        <h2 style="position: absolute; top: 49%; left: 15%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock <br>USC 2024</strong></h2>
-        
-        <div style="position: absolute; bottom: 200px; left: 0; right: 0; padding: 0 20px;">
-
-            <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
-                <div style="flex: 1; text-align: left;">
-                    <h3 style="margin: 0;">Fecha: 15 de septiembre, 2024</h3>
-                    <h3 style="margin: 0;">Ubicación: Cali, Colombia</h3>
-                    <h3 style="margin: 0;">Hora: 10:00 AM</h3>
-                </div>
-                <div style="text-align: center;">
-                    <h2 style="color: green; margin: 0;">Inscripciones abiertas</h2>
-                    <div style="display: inline-flex; align-items: center;">
-                        <img src="img/avatar-default-removebg-preview.png" alt="Icono" style="width: 24px; height: 24px; margin-left: 10px;">
-                        <p style="font-size: 24px; font-weight: bold; margin: 0; color: green;">110</p>
+        <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100vh;">
+            <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -80%); width: 90%; height: 350px; border-radius: 18px; margin: 0px; padding: 10px">
+            <h2 style="position: absolute; top: 49%; left: 15%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock <br>USC 2024</strong></h2>
+            <h2 id="event-entry" style="position: absolute; top: 46%; right: 0%; transform: translate(-50%, -100%); color: white; font-size: 25px;">Entrada Libre</h2>
+            <div style="position: absolute; bottom: 200px; left: 0; right: 0; padding: 0 20px;">
+                <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="flex: 1; text-align: left;">
+                        <h3 id="event-date" style="margin: 0;">Fecha: 15 de septiembre, 2024</h3>
+                        <h3 id="event-location" style="margin: 0;">Ubicación: Cali, Colombia</h3>
+                        <h3 id="event-time" style="margin: 0;">Hora: 10:00 AM</h3>
+                    </div>
+                    <div style="text-align: center;">
+                        <h2 id="event-status" style="color: green; margin: 0;">Inscripciones abiertas</h2><br><br>
+                        <div style="display: inline-flex; align-items: center;">
+                            <img src="img/avatar-default-removebg-preview.png" alt="Icono" style="width: 24px; height: 24px; margin-left: 10px;">
+                            <p id="event-count" style="font-size: 24px; font-weight: bold; margin: 0; color: green;">110</p>
+                        </div>
                     </div>
                 </div>
-                
+            </div>
+            
+            
+            <div style="position: absolute; bottom: 40px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);background-color: rgba(21, 125, 17, 0.8); border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+                <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
+                <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non libero vel eros accumsan egestas. Nulla facilisi. Proin vel lacus vel elit luctus luctus a sit amet ligula.
+                </p>
             </div>
         </div>
-        <div style="position: absolute; bottom: 40px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);background-color: rgba(21, 125, 17, 0.8); border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-            <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
-            <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non libero vel eros accumsan egestas. Nulla facilisi. Proin vel lacus vel elit luctus luctus a sit amet ligula.
-            </p>
-        </div>
-    </div>
-
     <div class="contents order-1 order-md-2">
 
             <div class="container">
@@ -182,25 +177,44 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('languageToggle').addEventListener('change', function() {
-            if (this.checked) {
-                document.getElementById('form-title').innerHTML = 'Sign <strong>In</strong>';
-                document.getElementById('email-label').textContent = 'Email';
-                document.getElementById('password-label').textContent = 'Password';
-                document.getElementById('username').placeholder = 'example@mail.com';
-                document.getElementById('password').placeholder = 'Enter your password';
-                document.getElementById('forgot-pass').textContent = 'Don\'t have an account yet?';
-                document.getElementById('submit-btn').value = 'Sign In';
-            } else {
-                document.getElementById('form-title').innerHTML = 'Inicia <strong>Sesión</strong>';
-                document.getElementById('email-label').textContent = 'Correo electrónico';
-                document.getElementById('password-label').textContent = 'Contraseña';
-                document.getElementById('username').placeholder = 'example@mail.com';
-                document.getElementById('password').placeholder = 'Ingresa tu Contraseña';
-                document.getElementById('forgot-pass').textContent = '¿Aún no tienes cuenta?';
-                document.getElementById('submit-btn').value = 'Iniciar Sesión';
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+    var languageToggle = document.getElementById('languageToggle');
+
+    languageToggle.addEventListener('change', function() {
+        if (this.checked) {
+            // Traducción para inglés
+            document.getElementById('form-title').innerHTML = 'Sign <strong>In</strong>';
+            document.getElementById('email-label').textContent = 'Email';
+            document.getElementById('password-label').textContent = 'Password';
+            document.getElementById('username').placeholder = 'example@mail.com';
+            document.getElementById('password').placeholder = 'Enter your password';
+            document.getElementById('forgot-pass').textContent = 'Don\'t have an account yet?';
+            document.getElementById('submit-btn').value = 'Sign In';
+
+            document.getElementById('event-date').textContent = 'Date: September 15, 2024';
+            document.getElementById('event-location').textContent = 'Location: Cali, Colombia';
+            document.getElementById('event-time').textContent = 'Time: 10:00 AM';
+            document.getElementById('event-status').textContent = 'Registrations Open';
+            document.getElementById('event-entry').textContent = 'Free Entry';
+        } else {
+            // Traducción para español
+            document.getElementById('form-title').innerHTML = 'Inicia <strong>Sesión</strong>';
+            document.getElementById('email-label').textContent = 'Correo electrónico';
+            document.getElementById('password-label').textContent = 'Contraseña';
+            document.getElementById('username').placeholder = 'example@mail.com';
+            document.getElementById('password').placeholder = 'Ingresa tu Contraseña';
+            document.getElementById('forgot-pass').textContent = '¿Aún no tienes cuenta?';
+            document.getElementById('submit-btn').value = 'Iniciar Sesión';
+
+            document.getElementById('event-date').textContent = 'Fecha: 15 de septiembre, 2024';
+            document.getElementById('event-location').textContent = 'Ubicación: Cali, Colombia';
+            document.getElementById('event-time').textContent = 'Hora: 10:00 AM';
+            document.getElementById('event-status').textContent = 'Inscripciones abiertas';
+            document.getElementById('event-entry').textContent = 'Entrada Libre';
+        }
+    });
+});
+
     </script>
 </body>
 </html>
