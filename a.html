@@ -11,60 +11,67 @@
     <title>Regístrate</title>
     <style>
         .form-column {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-}
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-.form-subgroup {
-    display: flex;
-    flex-direction: column;
-    width: 48%; /* Ajusta para que los selects sean más pequeños */
-}
+        .form-subgroup {
+            display: flex;
+            flex-direction: column;
+            width: 48%; /* Ajusta para que los selects sean más pequeños */
+        }
 
-.nationality-statement-group {
-    display: flex;
-    justify-content: space-between; /* Para poner los selects uno al lado del otro */
-}
+        .nationality-statement-group {
+            display: flex;
+            justify-content: space-between; /* Para poner los selects uno al lado del otro */
+        }
 
-.form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
 
-.btn-signup {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        .btn-signup {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-.btn-signup:hover {
-    background-color: #45a049;
-}
+        .btn-signup:hover {
+            background-color: #45a049;
+        }
 
+        .flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+        }
 
-
+        .check {
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
 <div class="d-lg-flex half">
     <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100vh;">
         <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top:25%; left: 50%; transform: translate(-50%, -100%); width: 94%; height: 293px; border-radius: 18px; margin-top: 143px;">
-        <h2 style="position: absolute; top: 57%; left: 20%; transform: translate(-50%, -100%); color: white; font-size: 25px; "><strong>Festival de Rock USC <br>2024</strong></h2>
+        <h2 style="position: absolute; top: 57%; left: 20%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock USC <br>2024</strong></h2>
         <h2 id="event-entry" style="position: absolute; top: 53%; right: 0%; transform: translate(-50%, -100%); color: white; font-size: 25px;">Entrada Libre</h2>
         <div style="position: absolute; bottom: 135px; left: 0; right: 0; padding: 0 20px;">
             <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
@@ -82,8 +89,6 @@
                 </div>
             </div>
         </div>
-        
-        
         <div style="position: absolute; bottom: 0px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);background-color: rgba(21, 125, 17, 0.8); border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
             <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
             <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
@@ -120,36 +125,35 @@
                             <path d="M28.222,4.21l-9.222,7.376v1.414h.75l9.943-7.94c-.419-.384-.918-.671-1.471-.85Z" fill="#b92932"></path>
                             <path d="M2.328,26.957c.415,.387,.882,.711,1.373,.973l9.222-7.376v-1.414h-.75l-9.943,7.94c.421,.379,.918,.666,1.471,.85Z" fill="#b92932"></path>
                         </svg>
-                    </div>
-                    <form method="POST" id="formRegister" action="login.html">
+                    </div>  
+                    <form method="POST" id="formRegister" action="register.php">
                         <div class="form-column">
                             <div class="form-group">
                                 <label id="username-label" for="username" data-es="Usuario" data-en="Username">Usuario</label>
-                                <input type="text" class="form-control" id="username" placeholder="Usuario" required>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" required>
                             </div>
                             <div class="form-group">
-                                <label id="email-label" for="email" data-es="Correo electrónico" data-en="email">Correo electrónico</label>
-                                <input type="text" class="form-control" id="email" placeholder="Correo electrónico" required>
+                                <label id="email-label" for="email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
                             </div>
                             <div class="form-group">
                                 <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
-                                <input type="number" class="form-control" id="documentNumber" placeholder="Número de Documento" required>
-                            </div>
+                                <input type="number" class="form-control" id="documentNumber" name="documentNumber" placeholder="Número de Documento" required>
+                            </div>                            
                             <div class="form-group nationality-statement-group">
-
                                 <div class="form-subgroup">
                                     <label id="nationality-label" for="nationality" data-es="Nacionalidad" data-en="Nationality">Nacionalidad</label>
-                                    <select class="form-control" id="nationality">
-                                        <option value="afg" data-es="Afgano" data-en="Afghan">Afgano</option>
-                                        <option value="alb" data-es="Albanés" data-en="Albanian">Albanés</option>
-                                        <option value="alg" data-es="Argelino" data-en="Algerian">Argelino</option>
-                                        <option value="and" data-es="Andorrano" data-en="Andorran">Andorrano</option>
-                                        <option value="ang" data-es="Angoleño" data-en="Angolan">Angoleño</option>
-                                        <option value="ant" data-es="Antiguano" data-en="Antiguan">Antiguano</option>
-                                        <option value="ara" data-es="Árabe" data-en="Arab">Árabe</option>
-                                        <option value="arg" data-es="Argentino" data-en="Argentine">Argentino</option>
-                                        <option value="aus" data-es="Australiano" data-en="Australian">Australiano</option>
-                                        <option value="aut" data-es="Austriaco" data-en="Austrian">Austriaco</option>
+                                    <select class="form-control" id="nationality" name="nacionality">
+                                        <option value="afg" data-es="Afgano" data-en="Afghan"> <img src="flags/afg.png" class="flag" alt="Afgano"> Afgano</option>
+                                        <option value="alb" data-es="Albanés" data-en="Albanian"> <img src="flags/alb.png" class="flag" alt="Albanés"> Albanés</option>
+                                        <option value="alg" data-es="Argelino" data-en="Algerian"> <img src="flags/alg.png" class="flag" alt="Argelino"> Argelino</option>
+                                        <option value="and" data-es="Andorrano" data-en="Andorran"> <img src="flags/and.png" class="flag" alt="Andorrano"> Andorrano</option>
+                                        <option value="ang" data-es="Angoleño" data-en="Angolan"> <img src="flags/ang.png" class="flag" alt="Angoleño"> Angoleño</option>
+                                        <option value="ant" data-es="Antiguano" data-en="Antiguan"> <img src="flags/ant.png" class="flag" alt="Antiguano"> Antiguano</option>
+                                        <option value="ara" data-es="Árabe" data-en="Arab"> <img src="flags/ara.png" class="flag" alt="Árabe"> Árabe</option>
+                                        <option value="arg" data-es="Argentino" data-en="Argentinian"> <img src="flags/arg.png" class="flag" alt="Argentino"> Argentino</option>
+                                        <option value="aus" data-es="Australiano" data-en="Australian"> <img src="flags/aus.png" class="flag" alt="Australiano"> Australiano</option>
+                                        <option value="aut" data-es="Austriaco" data-en="Austrian"> <img src="flags/aut.png" class="flag" alt="Austriaco"> Austriaco</option>
                                         <option value="aze" data-es="Azerbaiyano" data-en="Azerbaijani">Azerbaiyano</option>
                                         <option value="bah" data-es="Bahameño" data-en="Bahamian">Bahameño</option>
                                         <option value="ban" data-es="Bangladesí" data-en="Bangladeshi">Bangladesí</option>
@@ -290,97 +294,71 @@
                                         <option value="zwe" data-es="Zimbabuense" data-en="Zimbabwean">Zimbabuense</option>
                                     </select>
                                 </div>
-                                
                                 <div class="form-subgroup">
                                     <label id="statement-label" for="statement" data-es="Estamento" data-en="Statement">Estamento</label>
-                                    <select class="form-control" id="statement">
-                                        <option value="estudiante" data-es="Estudiante" data-en="Student">Estudiante</option>
-                                        <option value="docente" data-es="Docente" data-en="Teacher">Docente</option>
-                                        <option value="otros" data-es="Otros" data-en="Others">Otros</option>
+                                    <select class="form-control" id="statement" name="statement">
+                                        <option value="est1" data-es="Estudiante" data-en="Student">Estudiante</option>
+                                        <option value="est2" data-es="Egresado" data-en="Graduate">Egresado</option>
+                                        <option value="est3" data-es="Profesor" data-en="Teacher">Profesor</option>
+                                        <option value="est4" data-es="Empleado" data-en="Employee">Empleado</option>
+                                        <option value="est5" data-es="Otros" data-en="Others">Otros</option>
                                     </select>
-                                </div>    
+                                </div>
                             </div>
-                            
-                            
-                            <p id="login-link">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
-                            <!-- Botón de Sign Up -->
-                            <div class="form-group">
-                                <button type="submit" id="signup-button" class="btn-signup">Regístrate</button>
-                            </div>
+                            <button type="submit" class="btn-signup" id="signup-button">Inscribirme</button>
                         </div>
                     </form>
-
-                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
     var languageSwitch = document.getElementById('languageSwitch');
 
-    // Función para aplicar la traducción
+    languageSwitch.addEventListener('change', function() {
+        console.log('Cambio de idioma detectado');
+        applyTranslation();
+    });
+
     function applyTranslation() {
         var isEnglish = languageSwitch.checked;
 
-        // Traducción de títulos y etiquetas del formulario
+        // Traducción de títulos y etiquetas
         document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>Up</strong>' : 'Regístrate <strong></strong>';
         document.getElementById('username-label').textContent = isEnglish ? 'Username' : 'Usuario';
         document.getElementById('email-label').textContent = isEnglish ? 'Email' : 'Correo electrónico';
         document.getElementById('documentNumber-label').textContent = isEnglish ? 'Document Number' : 'Número de Documento';
+        document.getElementById('nationality-label').textContent = isEnglish ? 'Nationality' : 'Nacionalidad';
+        document.getElementById('statement-label').textContent = isEnglish ? 'Statement' : 'Estamento';
+
+        // Traducción de placeholder
         document.getElementById('username').placeholder = isEnglish ? 'example@mail.com' : 'Usuario';
         document.getElementById('email').placeholder = isEnglish ? 'email@example.com' : 'Correo electrónico';
         document.getElementById('documentNumber').placeholder = isEnglish ? 'Enter your document number' : 'Número de Documento';
-        document.getElementById('signup-button').textContent = isEnglish ? 'Sign Up' : 'Regístrate';
-        document.getElementById('statement-label').textContent = isEnglish ? 'Stament' : 'Estamento';
-        
+
+        // Traducción de opciones de selección (Nacionalidad)
         var nationalitySelect = document.getElementById('nationality');
         Array.from(nationalitySelect.options).forEach(function(option) {
             option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
         });
 
+        // Traducción de opciones de selección (Estamento)
         var statementSelect = document.getElementById('statement');
         Array.from(statementSelect.options).forEach(function(option) {
             option.textContent = option.getAttribute(isEnglish ? 'data-en' : 'data-es');
         });
 
+        // Traducción del mensaje de "¿Ya tienes cuenta?"
         var loginLink = document.getElementById('login-link');
         loginLink.innerHTML = isEnglish 
             ? "Already have an account? <a href='login.html'>Sign In here</a>" 
             : "¿Ya tienes cuenta? <a href='login.html'>Inicia sesión aquí</a>";
 
-
-        // Traducción de información del evento
-        document.getElementById('event-date').textContent = isEnglish ? 'Date: September 15, 2024' : 'Fecha: 15 de septiembre, 2024';
-        document.getElementById('event-location').textContent = isEnglish ? 'Location: Cali, Colombia' : 'Ubicación: Cali, Colombia';
-        document.getElementById('event-time').textContent = isEnglish ? 'Time: 10:00 AM' : 'Hora: 10:00 AM';
-        document.getElementById('event-status').textContent = isEnglish ? 'Registrations Open' : 'Inscripciones abiertas';
-        document.getElementById('event-entry').textContent = isEnglish ? 'Free Entry' : 'Entrada Libre';
+            alert("¡Inscripción exitosa!");
+        window.location.href = "index.html"; // Redirigir a index.html
+        return false;
     }
-
-    // Aplicar traducción en base al estado del switch al cargar la página
-    applyTranslation();
-
-    // Agregar el evento change para el switch
-    languageSwitch.addEventListener('change', function() {
-        applyTranslation();
-    });
-});
-
-
-
-
-
 </script>
-
-
-
 </body>
 </html>
