@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href="https://prep20202.usc.edu.co/pluginfile.php/1/theme_edumy/favicon/1724452750/logo%20Acreditaci%C3%B3n%20Institucional.png">
     <title>Regístrate</title>
     <style>
+        body{
+            overflow: hidden;
+        }
         .form-column {
             display: flex;
             flex-direction: column;
@@ -76,12 +79,14 @@
 </head>
 <body>
 <div class="d-lg-flex half">
-    <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100.7vh; width: 850px;">
-        <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top:25%; left: 50%; transform: translate(-50%, -100%); width: 94%; height: 293px; border-radius: 18px; margin-top: 143px;">
-        <h2 style="position: absolute; top: 57%; left: 20%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock USC <br>2024</strong></h2>
-        <h2 id="event-entry" style="position: absolute; top: 53%; right: 0%; transform: translate(-50%, -100%); color: white; font-size: 25px; font-weight: bold;">Entrada Libre</h2>
-        <div style="position: absolute; bottom: 135px; left: 0; right: 0; padding: 0 20px;">
-            <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
+    <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100vh; width: 700px;">
+        <img src="img/photo-1470229722913-7c0e2dbbafd3.jpeg" style="width: 95%; max-height: 250px; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px;">
+
+        <h2 style="position: absolute; top: 50%; left: 20%; transform: translate(-45%, -50%); color: white; font-size: 25px;"><strong>FESTIVAL DE ROCK USC <br>2024</strong></h2>
+        <h2 id="event-entry" style="position: absolute; top: 46%; right: 0%; transform: translate(-20%, -15%); color: white; font-size: 25px; font-weight: bold;">Entrada Libre</h2>
+        <div style="position: absolute; bottom: 135px; left: 0; right: 0; padding: 0 30px; top: 54%;">
+            
+            <div style="background-color: rgba(141, 197, 159, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
                 <div style="flex: 1; text-align: left;">
                     <div style="display: inline-flex; align-items: center;">
                         
@@ -112,10 +117,10 @@
                 </div>
             </div>
         </div>
-        <div style="position: absolute; bottom: 0px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);">
-            <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
-            <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non libero vel eros accumsan egestas. Nulla facilisi. Proin vel lacus vel elit luctus luctus a sit amet ligula.
+        <div style="position: absolute; bottom: 0px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255); top: 74%; margin-top: 8%;">
+            <h2 style="text-align: justify; margin-top: 0; "><strong>Sobre el Evento</strong></h2>
+            <p id="event-description" style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255); ">
+            Artistas icónicos del rock en español incluyen a <strong>Soda Stereo</strong>, <strong>Héroes del Silencio</strong> y <strong>Molotov</strong>, junto a bandas como <strong>Los Fabulosos Cadillacs</strong> y <strong>La Renga</strong>.
             </p>
         </div>
     </div>
@@ -124,8 +129,8 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
                     <br>
-                    <h3 id="form-title" style="font-weight: bold;">Regístrate <strong></strong></h3>
-                    <p id="registration-message" style="color: black; text-align: justify; ">Para inscribirte a este evento, es necesario que tengas una cuenta</p>
+                    <h3 id="form-title" style="font-weight: bold; text-align: center;margin-top: -25%;">Regístrate <strong></strong></h3>
+                    <p id="registration-message" style="color: black; text-align: justify; ">Para inscribirte, es necesario que tengas una cuenta</p>
                     <div class="language-switch">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <path fill="#f1c142" d="M1 10H31V22H1z"></path>
@@ -329,6 +334,7 @@
                                     </select>
                                 </div>
                             </div>
+                            <a href="login.html" style="text-align: right;">¿Ya tienes Cuenta?</a><br>
                             <button type="submit" class="btn-signup" id="signup-button">Inscribirme</button>
                         </div>
                     </form>
@@ -358,12 +364,22 @@
             // Traducción del mensaje de inscripción
         document.getElementById('registration-message').textContent = isEnglish 
         ? "To register for this event, you need to have an account." 
-        : "Para inscribirte a este evento, es necesario que tengas una cuenta.";
+        : "Para inscribirte, es necesario que tengas una cuenta.";
 
                 // Traducción del texto del botón de inscripción
         document.getElementById('signup-button').textContent = isEnglish 
             ? "Sign Up" 
             : "Inscribirme";
+
+        
+            document.getElementById('event-date').innerHTML = isEnglish ? 'Date: 15th September 2024': 'Fecha: 15 de Septiembre, 2024';
+            document.getElementById('event-location').innerHTML = isEnglish ? 'Location: Cali, Colombia': 'Ubicación: Cali, Colombia';
+            document.getElementById('event-time').innerHTML = isEnglish ? 'Time: 10:00 AM': 'Hora: 10:00';
+            document.getElementById('event-entry').innerHTML = isEnglish ? 'Free Entracy': 'Entrada Libre';
+            document.getElementById('event-status').innerHTML = isEnglish ? 'Registration Open': 'Inscripciones Abiertas';
+
+            document.getElementById('event-description').innerHTML = isEnglish ? 'Iconic Spanish rock artists include Soda Stereo, Héroes del Silencio and Molotov, alongside bands such as Los Fabulosos Cadillacs and La Renga.' : 'Artistas icónicos del rock en español incluyen a Soda Stereo, Héroes del Silencio y Molotov, junto a bandas como Los Fabulosos Cadillacs y La Renga.';
+
 
 
 

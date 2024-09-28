@@ -22,6 +22,9 @@
     <title>Inicia Sesión</title>
 
     <style>
+    body{
+        overflow: hidden;
+    }
     .check {
         position: relative;
         width: 50px;
@@ -103,12 +106,14 @@
 </head>
 <body>
     <div class="d-lg-flex half">
-        <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100.7vh; width: 850px;">
-            <img src="img/cepeda.jpg" alt="Logo" style="position: absolute; top:25%; left: 50%; transform: translate(-50%, -100%); width: 94%; height: 293px; border-radius: 18px; margin-top: 143px;">
-            <h2 style="position: absolute; top: 57%; left: 20%; transform: translate(-50%, -100%); color: white; font-size: 25px;"><strong>Festival de Rock USC <br>2024</strong></h2>
-            <h2 id="event-entry" style="position: absolute; top: 53%; right: 0%; transform: translate(-50%, -100%); color: white; font-size: 25px; font-weight: bold;">Entrada Libre</h2>
-            <div style="position: absolute; bottom: 135px; left: 0; right: 0; padding: 0 20px;">
-                <div style="background-color: rgba(141, 197, 159, 0.8); padding: 20px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center;">
+        <div class="bg order-2 order-md-1" style="background-color: #0b8237; position: relative; height: 100vh; width: 700px;">
+            <img src="img/photo-1470229722913-7c0e2dbbafd3.jpeg" style="width: 95%; max-height: 250px; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px;">
+    
+            <h2 style="position: absolute; top: 50%; left: 20%; transform: translate(-45%, -50%); color: white; font-size: 25px;"><strong>FESTIVAL DE ROCK USC <br>2024</strong></h2>
+            <h2 id="event-entry" style="position: absolute; top: 46%; right: 0%; transform: translate(-20%, -15%); color: white; font-size: 25px; font-weight: bold;">Entrada Libre</h2>
+            <div style="position: absolute; bottom: 135px; left: 0; right: 0; padding: 0 30px; top: 54%;">
+                
+                <div style="background-color: rgba(141, 197, 159, 0.8); padding: 15px; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: center; display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
                     <div style="flex: 1; text-align: left;">
                         <div style="display: inline-flex; align-items: center;">
                             
@@ -139,10 +144,10 @@
                     </div>
                 </div>
             </div>
-            <div style="position: absolute; bottom: 0px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255);">
-                <h2 style="text-align: center; margin-top: 0;"><strong>About This</strong></h2>
+            <div style="position: absolute; bottom: 0px; left: 0; right: 0; padding: 20px; color: rgb(255, 255, 255); top: 74%; margin-top: 8%;">
+                <h2 style="text-align: justify; margin-top: 0; "><strong>About This</strong></h2>
                 <p style="text-align: justify; margin-bottom: 0; color: rgb(255, 255, 255);">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non libero vel eros accumsan egestas. Nulla facilisi. Proin vel lacus vel elit luctus luctus a sit amet ligula.
+                    Artistas icónicos del rock en español incluyen a Soda Stereo, Héroes del Silencio y Molotov, junto a bandas como Los Fabulosos Cadillacs y La Renga.
                 </p>
             </div>
         </div>
@@ -210,6 +215,7 @@
             document.getElementById('event-time').textContent = 'Time: 10:00 AM';
             document.getElementById('event-status').textContent = 'Registrations Open';
             document.getElementById('event-entry').textContent = 'Free Entry';
+            document.getElementById('event-description').textContent = 'Iconic Spanish rock artists include Soda Stereo, Héroes del Silencio and Molotov, alongside bands such as Los Fabulosos Cadillacs and La Renga.';
         } else {
             // Traducción para español
             document.getElementById('form-title').innerHTML = 'Inicia <strong>Sesión</strong>';
@@ -219,7 +225,7 @@
             document.getElementById('password').placeholder = 'Ingresa tu Contraseña';
             document.getElementById('forgot-pass').textContent = '¿Aún no tienes cuenta?';
             document.getElementById('submit-btn').value = 'Iniciar Sesión';
-
+            document.getElementById('event-description').textContent = 'Artistas icónicos del rock en español incluyen a Soda Stereo, Héroes del Silencio y Molotov, junto a bandas como Los Fabulosos Cadillacs y La Renga.';
             document.getElementById('event-date').textContent = 'Fecha: 15 de septiembre, 2024';
             document.getElementById('event-location').textContent = 'Ubicación: Cali, Colombia';
             document.getElementById('event-time').textContent = 'Hora: 10:00 AM';
