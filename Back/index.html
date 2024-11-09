@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Buscador de Eventos</h1>
+
+    <!-- Formulario para agregar/editar eventos -->
+    <div class="form-container">
+        <input type="hidden" id="evento-id">
+        <input type="text" id="nombreEvento" placeholder="Nombre del evento">
+        <input type="text" id="codigoEvento" placeholder="Código del evento">
+        <input type="text" id="responsable" placeholder="Responsable">
+        <button onclick="crearOActualizarEvento()">Guardar Evento</button>
+    </div>
+
+    <!-- Tabla de eventos -->
+    <table id="eventos-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Código</th>
+                <th>Responsable</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se añadirán los eventos -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
