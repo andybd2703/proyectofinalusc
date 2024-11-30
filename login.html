@@ -169,6 +169,8 @@
 
                         </div>
 
+                        
+
                         <form action="#" method="post">
                             <div class="form-group first">
                                 <label for="username" id="email-label">Correo electrónico</label>
@@ -180,8 +182,24 @@
                             </div>
 
                             <div class="d-flex mb-5 align-items-center">
-                                <span class="ml-auto"><a href="a.html" id="forgot-pass" class="forgot-pass">¿Aún no tienes cuenta?</a></span> 
+                                <span class="ml-auto"><a href="a.html" id="forgot-pass" class="forgot-pass">¿Aún no tienes cuenta?</a></span>
                             </div>
+
+                            <script src="https://accounts.google.com/gsi/client" async defer></script>
+                            <div id="g_id_onload"
+                                data-client_id="995067107645-3tg4kq7j2m5fv9i0brpg7fi1qpdth6va.apps.googleusercontent.com"
+                                data-login_uri="http://localhost:3000/google-login"
+                                data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin"
+                                data-type="standard"
+                                data-size="large"
+                                data-theme="outline"
+                                data-text="sign_in_with"
+                                data-shape="rectangular"
+                                data-logo_alignment="left">
+                            </div>
+                            <br>
 
                             <input type="submit" value="Iniciar Sesión" class="btn btn-block btn-primary" id="submit-btn" style="background-color: #0b8237; border: #0b8237;">
                         </form>
@@ -195,6 +213,8 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/translation.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
     var languageToggle = document.getElementById('languageToggle');
@@ -234,6 +254,53 @@
         }
     });
 });
+
+
+document.getElementById('languageSwitch').addEventListener('change', function () {
+    const isEnglish = this.checked;
+
+    // Traducción del título
+    document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>In</strong>' : 'Inicia <strong>Sesión</strong>';
+    
+    // Traducción de los elementos del evento
+    document.getElementById('event-entry').textContent = isEnglish ? 'Free Entry' : 'Entrada Libre';
+    document.getElementById('event-date').textContent = isEnglish ? 'Date: September 15, 2024' : 'Fecha: 15 de septiembre, 2024';
+    document.getElementById('event-location').textContent = isEnglish ? 'Location: Cali, Colombia' : 'Ubicación: Cali, Colombia';
+    document.getElementById('event-time').textContent = isEnglish ? 'Time: 10:00 AM' : 'Hora: 10:00 AM';
+    document.getElementById('event-status').textContent = isEnglish ? 'Registrations Open' : 'Inscripciones abiertas';
+    document.getElementById('event-count').textContent = isEnglish ? '110' : '110'; // Sin cambios porque es un número.
+
+    // Información adicional del evento
+    const aboutText = isEnglish
+        ? 'Iconic rock artists in Spanish include Soda Stereo, Héroes del Silencio, and Molotov, alongside bands like Los Fabulosos Cadillacs and La Renga.'
+        : 'Artistas icónicos del rock en español incluyen a Soda Stereo, Héroes del Silencio y Molotov, junto a bandas como Los Fabulosos Cadillacs y La Renga.';
+    document.querySelector('div[style*="text-align: justify"] p').textContent = aboutText;
+});
+
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client('TU_CLIENT_ID');
+
+async function verifyGoogleToken(token) {
+    const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: 'TU_CLIENT_ID',
+    });
+    const payload = ticket.getPayload();
+    return payload; // Contiene información del usuario (email, nombre, etc.)
+}
+
+// Ruta para manejar el inicio de sesión
+app.post('/google-login', async (req, res) => {
+    const { token } = req.body;
+    try {
+        const userData = await verifyGoogleToken(token);
+        // Aquí puedes manejar el registro o login del usuario
+        res.status(200).json({ success: true, user: userData });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+});
+
 
     </script>
 </body>
