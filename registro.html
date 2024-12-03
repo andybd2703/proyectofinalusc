@@ -129,8 +129,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
                     <br>
-                    <h3 id="form-title" style="font-weight: bold; text-align: center;margin-top: -25%;">Regístrate <strong></strong></h3>
-                    <p id="registration-message" style="color: black; text-align: justify; ">Para inscribirte, es necesario que tengas una cuenta</p>
+                    <h3 id="form-title" style="font-weight: bold; text-align: center;margin-top: -25%;">Inscríbete <strong></strong></h3>
                     <div class="language-switch">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <path fill="#f1c142" d="M1 10H31V22H1z"></path>
@@ -154,8 +153,8 @@
                             <path d="M28.222,4.21l-9.222,7.376v1.414h.75l9.943-7.94c-.419-.384-.918-.671-1.471-.85Z" fill="#b92932"></path>
                             <path d="M2.328,26.957c.415,.387,.882,.711,1.373,.973l9.222-7.376v-1.414h-.75l-9.943,7.94c.421,.379,.918,.666,1.471,.85Z" fill="#b92932"></path>
                         </svg>
-                    </div>  
-                    <form method="POST" id="formRegister" action="register.php">
+                    </div>
+                    <form method="POST" id="formRegister" onsubmit="showAlert(event)">
                         <div class="form-column">
                             <div class="form-group">
                                 <label id="username-label" for="username" data-es="Usuario" data-en="Username">Usuario</label>
@@ -168,7 +167,7 @@
                             <div class="form-group">
                                 <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
                                 <input type="number" class="form-control" id="documentNumber" name="documentNumber"  required>
-                            </div>                            
+                            </div>
                             <div class="form-group nationality-statement-group">
                                 <div class="form-subgroup">
                                     <label id="nationality-label" for="nationality" data-es="Nacionalidad" data-en="Nationality">Nacionalidad</label>
@@ -351,11 +350,22 @@
         applyTranslation();
     });
 
+
+    function showAlert(event) {
+            event.preventDefault();
+            alert('Formulario enviado con éxito!');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 800);
+        }
+
+
+
     function applyTranslation() {
         var isEnglish = languageSwitch.checked;
 
         // Traducción de títulos y etiquetas
-        document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>Up</strong>' : 'Regístrate <strong></strong>';
+        document.getElementById('form-title').innerHTML = isEnglish ? 'Sign <strong>Up</strong>' : 'Inscríbete <strong></strong>';
         document.getElementById('username-label').textContent = isEnglish ? 'Complete Name' : 'Nombre Completo';
         document.getElementById('email-label').textContent = isEnglish ? 'Email' : 'Correo electrónico';
         document.getElementById('documentNumber-label').textContent = isEnglish ? 'Document Number' : 'Número de Documento';
@@ -405,6 +415,11 @@
         window.location.href = "index.html"; // Redirigir a index.html
         return false;
     }
+
+
+
+
+
 </script>
 </body>
 </html>
