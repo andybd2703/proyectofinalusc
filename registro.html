@@ -333,8 +333,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <a href="login.html" style="text-align: right;">¿Ya tienes Cuenta?</a><br>
-                            <button type="submit" class="btn-signup" id="signup-button">Inscribirme</button>
+                            <script src="https://accounts.google.com/gsi/client" async defer></script>
+                            <div id="g_id_onload"
+                                data-client_id="995067107645-3tg4kq7j2m5fv9i0brpg7fi1qpdth6va.apps.googleusercontent.com"
+                                data-login_uri="http://localhost:3000/google-login"
+                                data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin"
+                                data-type="standard"
+                                data-size="large"
+                                data-theme="outline"
+                                data-text="sign_in_with"
+                                data-shape="rectangular"
+                                data-logo_alignment="left">
+                            </div>
+                            <br>                            <button type="submit" class="btn-signup" id="signup-button">Inscribirme</button>
                         </div>
                     </form>
                 </div>
