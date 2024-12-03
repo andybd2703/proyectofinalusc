@@ -157,7 +157,11 @@
                     <form method="POST" id="formRegister" onsubmit="showAlert(event)">
                         <div class="form-column">
                             <div class="form-group">
-                                <label id="username-label" for="username" data-es="Usuario" data-en="Username">Usuario</label>
+                                <div class="form-group">
+                                    <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
+                                    <input type="number" class="form-control" id="documentNumber" name="documentNumber"  required>
+                                </div>
+                                <label id="username-label" for="username" data-es="Usuario" data-en="Username">Nombre</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
                             </div>
                             <div class="form-group">
@@ -165,9 +169,10 @@
                                 <input type="text" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label id="documentNumber-label" for="documentNumber" data-es="Número de Documento" data-en="Document Number">Número de Documento</label>
-                                <input type="number" class="form-control" id="documentNumber" name="documentNumber"  required>
+                                <label id="password-label" for="password" data-es="Contraseña" data-en="Password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
                             </div>
+                            
                             <div class="form-group nationality-statement-group">
                                 <div class="form-subgroup">
                                     <label id="nationality-label" for="nationality" data-es="Nacionalidad" data-en="Nationality">Nacionalidad</label>
@@ -384,7 +389,8 @@
         document.getElementById('documentNumber-label').textContent = isEnglish ? 'Document Number' : 'Número de Documento';
         document.getElementById('nationality-label').textContent = isEnglish ? 'Nationality' : 'Nacionalidad';
         document.getElementById('statement-label').textContent = isEnglish ? 'Statement' : 'Estamento';
-            // Traducción del mensaje de inscripción
+        document.getElementById('statement-label').textContent = isEnglish ? 'Password' : 'Contraseña';
+        // Traducción del mensaje de inscripción
         document.getElementById('registration-message').textContent = isEnglish 
         ? "To register for this event, you need to have an account." 
         : "Para inscribirte, es necesario que tengas una cuenta.";
